@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+
+<robot name="rb1">
+    <!-- Link - chassis -->
+    <link name="base_link">
+        <inertial>
+            <mass value="10" />
+            <origin xyz="0 0 0.3" rpy="0 0 0" />
+            <inertia ixx="1.5417" ixy="0" ixz="0" iyy="3.467" iyz="0" izz="4.742" />
+        </inertial>
+
+        <collision>
+            <geometry>
+                <cylinder radius = "0.25" length = "0.30"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <geometry>
+                <cylinder radius = "0.25" length = "0.30"/>
+            </geometry>
+            <material name="DarkBlue">
+                <color rgba="0.2 0.2 0.4 1" />
+            </material>
+        </visual>
+    </link>
+
+    <!-- Joint - Front Caster Wheel -->
+    <joint name="joint_front_caster" type="fixed">
+        <origin rpy="0 0 0" xyz="0.1 0 -0.15" />
+        <child link="front_caster" />
+        <parent link="base_link" />
+        <joint_properties damping="1.0" friction="0.0" />
+    </joint>
+
+    <!-- Link - Front Caster Wheel -->
+    <link name="front_caster">
+        <inertial>
+            <mass value="1" />
+            <origin xyz="0.05 0 0" rpy="0 0 0" />
+            <inertia ixx="0.002526666666667" ixy="0" ixz="0" iyy="0.002526666666667" iyz="0" izz="0.005"/>
+        </inertial>
+
+        <!-- Caster wheel support -->
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0.0" />
+            <geometry>
+                <sphere radius="0.05" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.0" />
+            <geometry>
+                <sphere radius="0.05" />
+            </geometry>
+            <material name="DarkBlue">
+                <color rgba="0.2 0.2 0.4 1" />
+            </material>
+        </visual>
+
+        <!-- Caster wheel -->
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 -0.035" />
+            <geometry>
+                 <sphere radius="0.025" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 -0.035" />
+            <geometry>
+                 <sphere radius="0.025" />
+            </geometry>
+            <material name="Grey">
+                <color rgba="0.6 0.6 0.6 1" />
+            </material>
+        </visual>
+    </link>
+
+    <!-- Joint - Back Caster Wheel -->
+    <joint name="joint_back_caster" type="fixed">
+        <origin rpy="0 0 0" xyz="-0.1 0 -0.15" />
+        <child link="back_caster" />
+        <parent link="base_link" />
+        <joint_properties damping="1.0" friction="0.0" />
+    </joint>
+
+    <!-- Link - back Caster Wheel -->
+    <link name="back_caster">
+        <inertial>
+            <mass value="1" />
+            <origin xyz="0.05 0 0" rpy="0 0 0" />
+            <inertia ixx="0.002526666666667" ixy="0" ixz="0" iyy="0.002526666666667" iyz="0" izz="0.005"/>
+        </inertial>
+
+        <!-- Caster wheel support -->
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0.0" />
+            <geometry>
+                <sphere radius="0.05" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.0" />
+            <geometry>
+                <sphere radius="0.05" />
+            </geometry>
+            <material name="DarkBlue">
+                <color rgba="0.2 0.2 0.4 1" />
+            </material>
+        </visual>
+
+        <!-- Caster wheel -->
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 -0.035" />
+            <geometry>
+                 <sphere radius="0.025" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 -0.035" />
+            <geometry>
+                 <sphere radius="0.025" />
+            </geometry>
+            <material name="Grey">
+                <color rgba="0.6 0.6 0.6 1" />
+            </material>
+        </visual>
+    </link>
+
+</robot>
