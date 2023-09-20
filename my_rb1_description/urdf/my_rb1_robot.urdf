@@ -20,6 +20,9 @@
         <material>Gazebo/Grey</material>
         <preserveFixedJoint>true</preserveFixedJoint>
     </gazebo>
+    <gazebo reference="base_footprint">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
 
     <!-- Gazebo: differential drive -->
     <gazebo>
@@ -79,7 +82,7 @@
     <link name="base_link">
         <inertial>
             <mass value="20" />
-            <origin xyz="0 0 0.3" rpy="0 0 0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <inertia ixx="0.4625" ixy="0" ixz="0" iyy="0.4625" iyz="0" izz="0.625" />
         </inertial>
 
