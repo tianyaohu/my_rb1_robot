@@ -15,13 +15,19 @@
     <gazebo reference="front_caster">
         <material>Gazebo/Grey</material>
         <preserveFixedJoint>true</preserveFixedJoint>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
     </gazebo>
     <gazebo reference="back_caster">
         <material>Gazebo/Grey</material>
         <preserveFixedJoint>true</preserveFixedJoint>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
     </gazebo>
     <gazebo reference="base_footprint">
         <preserveFixedJoint>true</preserveFixedJoint>
+        <mu1>0</mu1>
+        <mu2>0</mu2>
     </gazebo>
 
     <!-- Gazebo: differential drive -->
@@ -82,7 +88,7 @@
     <link name="base_link">
         <inertial>
             <mass value="20" />
-            <origin xyz="0 0 0" rpy="0 0 0" />
+            <origin xyz="0 0 0.05" rpy="0 0 0" />
             <inertia ixx="0.4625" ixy="0" ixz="0" iyy="0.4625" iyz="0" izz="0.625" />
         </inertial>
 
@@ -112,10 +118,10 @@
     <link name="front_laser">
         <inertial>
             <origin xyz="0 0 0" rpy="0 0 0" />
-            <!-- <mass value="1" />
-            <inertia ixx="0.0008333" ixy="0" ixz="0" iyy="0.0008333" iyz="0" izz="0.00125"/> -->
-            <mass value="0.5" />
-            <inertia ixx="0.0004167" ixy="0" ixz="0" iyy="0.0004167" iyz="0" izz="0.000625"/>
+            <mass value="0" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+            <!-- <mass value="0.5" />
+            <inertia ixx="0.0004167" ixy="0" ixz="0" iyy="0.0004167" iyz="0" izz="0.000625"/> -->
         </inertial>
 
         <collision>
@@ -144,7 +150,7 @@
     <!-- Link - left wheel -->
     <link name="base_footprint">
         <inertial>
-            <mass value="0.5" />
+            <mass value="0" />
             <origin xyz="0 0 0" rpy="0 0 0" />
             <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
         </inertial>
@@ -237,14 +243,16 @@
         </inertial>
 
         <!-- Caster wheel support -->
+
+        <!-- Caster wheel support -->
         <collision>
-            <origin rpy="0 0 0" xyz="0 0 0.0" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
                 <sphere radius="0.02" />
             </geometry>
         </collision>
         <visual>
-            <origin rpy="0 0 0" xyz="0 0 0.0" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
                 <sphere radius="0.02" />
             </geometry>
@@ -289,13 +297,13 @@
 
         <!-- Caster wheel support -->
         <collision>
-            <origin rpy="0 0 0" xyz="0 0 0.0" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
                 <sphere radius="0.02" />
             </geometry>
         </collision>
         <visual>
-            <origin rpy="0 0 0" xyz="0 0 0.0" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
                 <sphere radius="0.02" />
             </geometry>
